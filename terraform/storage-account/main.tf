@@ -3,7 +3,10 @@
 data "azurerm_client_config" "current" {}
 
 data "http" "ip" {
-  url = "https://ifconfig.me"
+  url = "https://api.ipify.org" # This returns plain-text IPv4
+  request_headers = {
+    Accept = "text/plain"
+  }
 }
 
 resource "azurerm_storage_account" "adl_st" {
