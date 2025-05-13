@@ -3,7 +3,7 @@
 data "azurerm_client_config" "current" {}
 
 data "http" "ip" {
-  url = "https://ifconfig.me"
+  url = "https://api.ipify.org"
 }
 
 resource "azurerm_synapse_workspace" "adl_syn" {
